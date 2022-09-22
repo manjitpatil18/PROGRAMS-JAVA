@@ -1,0 +1,48 @@
+public class Main
+{
+	int prio(char ch)
+	{
+	    switch(ch)
+	    {
+	        case 'I':
+	            return 1;
+	        case 'V':
+	            return 5;
+	        case 'X':
+	            return 10;
+	        case 'L':
+	            return 50;
+	        case 'C':
+	            return 100;
+	        case 'D':
+	            return 500;
+	        case 'M':
+	            return 1000;
+	        default:
+	            return 0;
+	    }
+	}
+	
+	public static void main(String[] args)
+	{
+		String s="LXXXIV";
+		Main m=new Main();
+		int sum=0;
+		for(int i=s.length()-1;i>0;i--)
+		{
+		    int a=m.prio(s.charAt(i));
+		    int b=m.prio(s.charAt(i-1));
+		    if(a>b)
+		    {
+		       sum+=(a-b);
+		       i--;
+		    }
+		    else
+		    {
+		        sum+=a;   
+		    }
+		        
+		}
+		    System.out.println(sum+m.prio(s.charAt(0))); 
+	}
+}
