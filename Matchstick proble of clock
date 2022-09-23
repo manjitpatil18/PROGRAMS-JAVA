@@ -1,0 +1,52 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args)
+	{
+	    Scanner in=new Scanner(System.in);
+	    int t=in.nextInt();
+        for(int i=0;i<t;i++)
+        {
+            String s=in.next();
+            int tat=0;
+            for(int j=0;j<s.length();j++)
+            {
+                tat+=taono(s.charAt(j));
+            }
+            String s2="";
+            if(tat%2==1)
+            {
+                s2+='7';
+                tat-=3;
+            }
+            for(int k=0;k<tat/2;k++)
+                s2+='1';
+            System.out.println(s2);
+        }
+	    
+	}
+	static int taono(char ch)
+	{
+	    switch(ch)
+	    {
+	        case '1':
+	            return 2;
+	        case '2':
+	        case '3':
+	        case '5':
+	            return 5;     
+	        case '4':
+	            return 4;
+	        case '6':
+	        case '9':
+	        case '0':
+	            return 6;
+	        case '7':
+	            return 3;
+	        default:
+	            return 7;
+	                        
+	            
+	    }
+	}
+}
