@@ -1,0 +1,23 @@
+# PROGRAMS-JAVA
+/******************************************************************************
+Given an n-digit large number in form of string, 
+check whether it is divisible by 7 or not.
+Print 1 if divisible by 7, otherwise 0.
+*******************************************************************************/
+
+
+import java.util.*;
+class Main{
+	public static void main(String[] args) 
+	{
+	    Scanner in=new Scanner(System.in);
+		System.out.println("Enter Number format string ");
+		String s=in.next();
+		long n=Long.parseLong(s);
+		if(n%7==0)
+		System.out.println(1);
+		else
+		System.out.println(0);
+
+	}
+}
